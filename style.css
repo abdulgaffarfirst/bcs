@@ -1,0 +1,446 @@
+/* 
+  ====================
+  বেসিক বডি স্টাইল
+  ====================
+  - পেজের মূল ব্যাকগ্রাউন্ড এবং টেক্সট এলাইনমেন্ট
+  - ফন্ট ফ্যামিলি এবং প্যাডিং সেট করা
+*/
+body {
+  font-family: 'Arial', sans-serif;
+  padding: 20px;
+  background: #f4f4f4;
+  margin: 0;
+  text-align: center;
+}
+
+/* 
+  ====================
+  ক্যাটাগরি মেনু স্টাইল
+  ====================
+  - ক্যাটাগরি নির্বাচনের বাটনগুলোর ডিজাইন
+  - কার্ডের মতো শেডো এবং বর্ডার রেডিয়াস
+*/
+.category-menu {
+  max-width: 600px;
+  margin: 50px auto;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.category-menu h2 {
+  margin-top: 0;
+  color: #333;
+}
+
+.category-menu button {
+  padding: 12px 25px;
+  margin: 10px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  min-width: 150px;
+}
+
+/* 
+  ====================
+  কুইজ সেকশন স্টাইল
+  ====================
+  - প্রশ্ন এবং অপশনগুলো দেখানোর মূল কন্টেইনার
+*/
+#quiz-section {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* 
+  ====================
+  টাইমার স্টাইল
+  ====================
+  - উপরে প্রদর্শিত টাইমারের ডিজাইন
+  - গোলাকার বর্ডার এবং রঙিন ব্যাকগ্রাউন্ড
+*/
+#global-timer {
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  background: #e91e63;
+  padding: 10px 20px;
+  border-radius: 50px;
+  margin: 20px auto;
+  display: inline-block;
+}
+
+/* 
+  ====================
+  প্রগ্রেস বার স্টাইল
+  ====================
+  - কুইজের অগ্রগতি দেখানোর বার
+  - সবুজ রঙের বার ধীরে ধীরে বাড়ে
+*/
+.progress-container {
+  width: 100%;
+  background: #e0e0e0;
+  border-radius: 10px;
+  margin: 20px 0;
+}
+
+.progress-bar {
+  height: 20px;
+  background: #4CAF50;
+  border-radius: 10px;
+  width: 0%;
+  transition: width 0.3s;
+}
+
+/* 
+  ====================
+  প্রশ্ন কার্ড স্টাইল
+  ====================
+  - প্রতিটি প্রশ্নের কার্ড ডিজাইন
+  - সাদা ব্যাকগ্রাউন্ড এবং শেডো
+*/
+.question {
+  background: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  text-align: left;
+}
+
+.question p {
+  margin-bottom: 15px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* 
+  ====================
+  অপশন স্টাইল (ক, খ, গ, ঘ)
+  ====================
+  - প্রতিটি অপশনের লেবেল ডিজাইন
+  - টাচ ফ্রেন্ডলি এবং ইন্টারেক্টিভ
+*/
+
+.option-label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  padding: 12px;
+  border-radius: 5px;
+  background: #f5f5f5;
+  cursor: pointer;
+  transition: all 0.3s;
+  border: 2px solid transparent;
+  -webkit-tap-highlight-color: transparent; /* মোবাইল টাচ হাইলাইট রিমুভ */
+}
+
+/* অপশনে হোভার ইফেক্ট */
+.option-label:hover {
+  background: #e0e0e0;
+}
+
+/* রেডিও বাটন লুকানো (কিন্তু কার্যকর) */
+.option-label input[type="radio"] {
+  display: none;
+}
+
+/* অপশন লেটার স্টাইল (গোলাকার ক, খ, গ, ঘ বাটন) */
+.option-letter {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 28px;
+  height: 28px;
+  background: #2196F3;
+  color: white;
+  border-radius: 50%;
+  margin-right: 12px;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+/* অপশন টেক্সট স্টাইল */
+.option-text {
+  flex-grow: 1;
+  font-size: 16px;
+}
+
+/* 
+  ====================
+  সিলেক্টেড অপশন স্টাইল
+  ====================
+  - ইউজার যে অপশন সিলেক্ট করবে তা সবুজ হবে
+  - টেক্সট গাঢ় সবুজ এবং বোল্ড হবে
+*/
+.option-label input:checked + .option-letter {
+  background: #4CAF50;
+  color: white;
+}
+
+.option-label input:checked ~ .option-text {
+  color: #2E7D32;
+  font-weight: bold;
+}
+
+/* 
+  ====================
+  ডিজেবল করা অপশন স্টাইল
+  ====================
+  - একবার উত্তর দিলে বাকি অপশন ধূসর হয়ে যাবে
+  - অপশন লেটার এবং টেক্সট উভয়ই ধূসর হবে
+*/
+.option-label input[disabled] + .option-letter {
+  background: #e0e0e0;
+  color: #9e9e9e;
+}
+
+.option-label input[disabled] ~ .option-text {
+  color: #9e9e9e;
+}
+
+/* 
+  ====================
+  পেজিনেশন স্টাইল
+  ====================
+  - প্রশ্নের পেজ নেভিগেশন বাটন
+  - একটিভ পেজের বাটন আলাদা রঙের
+*/
+
+
+#pagination {
+  margin: 30px 0;
+}
+
+#pagination button {
+  margin: 5px;
+  padding: 10px 15px;
+  background: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#pagination button.active {
+  background: #007bff;
+  font-weight: bold;
+}
+
+/* 
+  ====================
+  সাবমিট বাটন স্টাইল
+  ====================
+  - কুইজ জমা দেবার বড় কমলা বাটন
+*/
+#submit-btn {
+  padding: 12px 30px;
+  background: orange;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  margin: 20px auto;
+}
+
+/* 
+  ====================
+  রেজাল্ট সেকশন স্টাইল
+  ====================
+  - ফলাফল দেখানোর এলাকা
+  - হেডিং এবং বর্ডার স্টাইল
+*/
+#result {
+  max-width: 800px;
+  margin: 30px auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: left;
+}
+
+#result h3 {
+  margin-top: 0;
+  color: #333;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 10px;
+}
+
+/* 
+  ====================
+  রেজাল্ট আইটেম স্টাইল
+  ====================
+  - সঠিক/ভুল/অউত্তরিত প্রশ্নের স্টাইল
+  - বাম পাশে রঙিন বর্ডার সহ
+*/
+.result-item {
+  margin: 15px 0;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.correct-item {
+  background: #e8f5e9;
+  border-left: 4px solid #2e7d32;
+}
+
+.incorrect-item {
+  background: #ffebee;
+  border-left: 4px solid #c62828;
+}
+
+.unanswered-item {
+  background: #fff8e1;
+  border-left: 4px solid #ff8f00;
+}
+
+/* 
+  ====================
+  টগল বাটন স্টাইল
+  ====================
+  - ফলাফলে প্রশ্ন দেখানোর বাটন
+*/
+.toggle-btn {
+  padding: 5px 10px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-left: 10px;
+  font-size: 14px;
+}
+
+/* 
+  ====================
+  প্রশ্ন কন্টেইনার স্টাইল
+  ====================
+  - ফলাফলে প্রশ্ন দেখানোর এলাকা
+*/
+.questions-container {
+  margin-top: 15px;
+  padding: 15px;
+  background: #f9f9f9;
+  border-radius: 5px;
+}
+
+/* 
+  ====================
+  রিস্টার্ট বাটন স্টাইল
+  ====================
+  - আবার কুইজ শুরু করার বাটন
+*/
+.restart-btn {
+  padding: 10px 20px;
+  background: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+.restart-btn:hover {
+  background: #45a049;
+}
+
+/* 
+  ====================
+  মোবাইল রেস্পন্সিভ স্টাইল
+  ====================
+  - ছোট ডিভাইসের জন্য অ্যাডজাস্টমেন্ট
+*/
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+  
+  .category-menu {
+    padding: 20px;
+    margin: 20px auto;
+  }
+  
+  .category-menu button {
+    width: 100%;
+    margin: 5px 0;
+  }
+  
+  .question {
+    padding: 15px;
+  }
+  
+  /* মোবাইলে অপশন লেবেল প্যাডিং কমিয়ে দেওয়া */
+  .option-label {
+    padding: 10px 8px;
+  }
+  
+  /* মোবাইলে অপশন লেটার সাইজ ছোট */
+  .option-letter {
+    width: 24px;
+    height: 24px;
+    font-size: 14px;
+  }
+}
+
+/* অপশন স্টাইল */
+.option-label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  padding: 12px;
+  border-radius: 5px;
+  background: #f5f5f5;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+/* ইউজারের নির্বাচিত উত্তর */
+.option-label.selected-answer {
+  background: #e8f5e9;
+}
+
+.option-label.selected-answer .option-letter {
+  background: #4CAF50;
+}
+
+.option-label.selected-answer .option-text {
+  color: #2E7D32;
+  font-weight: bold;
+}
+
+/* ডিজেবল করা অপশন */
+.option-label.disabled-option {
+  background: #e0e0e0;
+  color: #9e9e9e;
+  cursor: not-allowed;
+}
+
+.option-label.disabled-option .option-letter {
+  background: #9e9e9e;
+}
+
+.option-label.disabled-option .option-text {
+  color: #9e9e9e;
+}
+
+/* অপশন লেটার স্টাইল */
+.option-letter {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 28px;
+  height: 28px;
+  background: #2196F3;
+  color: white;
+  border-radius: 50%;
+  margin-right: 12px;
+  font-weight: bold;
+}

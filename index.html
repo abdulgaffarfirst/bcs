@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MCQ Quiz</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- শুধুমাত্র ক্যাটাগরি মেনু প্রথমে দেখা যাবে -->
+  <div class="category-menu" id="category-menu">
+    <h2>ক্যাটাগরি নির্বাচন করুন</h2>
+    <button onclick="loadCategory('bangla')">বাংলা</button>
+    <button onclick="loadCategory('english')">ইংরেজি</button>
+    <button onclick="loadCategory('math')">গণিত</button>
+    <button onclick="loadCategory('gk')">সাধারণ জ্ঞান</button>
+  </div>
+
+  <!-- কুইজ কন্টেইনার (প্রথমে লুকানো থাকবে) -->
+  <div id="quiz-section" style="display:none;">
+    <!-- গ্লোবাল টাইমার -->
+    <div id="global-timer"></div>
+    
+    <!-- প্রগেস বার -->
+    <div class="progress-container">
+      <div id="progress-bar" class="progress-bar"></div>
+    </div>
+    
+    <!-- প্রশ্ন কন্টেইনার -->
+    <div id="quiz-container"></div>
+    
+    <!-- পেজিনেশন -->
+    <div id="pagination"></div>
+    
+    <!-- সাবমিট বাটন -->
+    <button id="submit-btn" onclick="submitQuiz()">সাবমিট</button>
+  </div>
+
+  <!-- ফলাফল কন্টেইনার -->
+  <div id="result"></div>
+
+  <script src="question.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
